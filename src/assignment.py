@@ -47,6 +47,8 @@ POSE_COCO_BODY_PARTS = {
     18: "Background",
 }
 
+
+
 # call this when a taxi is being hailed!
 def hail_taxi(img):
     print("Someone is hailing a taxi!")
@@ -106,7 +108,36 @@ if __name__ == '__main__':
 
             # TODO ensure it only does this when someone is hailing a taxi.
             # That is, an arm is above their head.
-            hail_taxi(image)
+
+"""
+Evidence of my journey to the answer/general stupidity doing this - Scarlett
+I JUST WANT THE Y VALUUUUEEEE
+
+            # if (POSE_COCO_BODY_PARTS[4], v.y) <= (POSE_COCO_BODY_PARTS[0], v.y) for v in human.body_parts.items():
+            # (POSE_COCO_BODY_PARTS[7], v.y) >= (POSE_COCO_BODY_PARTS[0], v.y):   
+            #     hail_taxi(image)
+
+            # print([(POSE_COCO_BODY_PARTS[4], v.y) for v in human.body_parts.items()])
+            # for x in body_parts.values()
+            # print(x)
+            # print([(POSE_COCO_BODY_PARTS[0], v.y) for v in human.body_parts.items()])
+
+            # print(POSE_COCO_BODY_PARTS[0].y for v human.body_parts.values())
+            # print(human.body_parts[0].v[y])
+            # print([(POSE_COCO_BODY_PARTS[0:"Nose"], v.y) for v in human.body_parts.items()])
+            # 'unhashable type; 'slice' --> What!?
+"""
+            
+            # ******************* THE IMPORTANT CHANGES ****************************
+
+            allpairs = human.body_parts[0].y #How to get the individual y coordinate value
+            print(allpairs) #Refer to the POSE_COCO_BODY_PARTS keys for the numbers for each respective body part
+            # 0 = Nose (eventually I want to code in recognition for which eye is higher)
+            # 4 = RWrist
+            # 7 = LWrist
+            # the 'y' value takes the top of the screen as 0 and the bottom of the screen as 1
+            # So when coding the if statements for hailing a taxi, the higher body part will have a lower value
+
 
             # Debugging statement: remove before demonstration.
             # print([(POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()])
