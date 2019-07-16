@@ -135,7 +135,7 @@ I JUST WANT THE Y VALUUUUEEEE
             # 0 = Nose (eventually I want to code in recognition for which eye is higher)
             # 4 = RWrist
             # 7 = LWrist
-            # the 'y' value takes the top of the screen as 0 and the bottom of the screen as 1
+            # the 'y' value takes the top of the screen as 0 and the bottom of the screen as 1.
             # So when coding the if statements for hailing a taxi, the higher body part will have a lower value
 
 
