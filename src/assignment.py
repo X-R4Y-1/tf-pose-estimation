@@ -128,7 +128,7 @@ I JUST WANT THE Y VALUUUUEEEE
             # 'unhashable type; 'slice' --> What!?
 """
             
-            # ******************* THE IMPORTANT CHANGES ****************************
+            # ******************** THE IMPORTANT CHANGES ****************************
 
             allpairs = human.body_parts[0].y #How to get the individual y coordinate value
             print(allpairs) #Refer to the POSE_COCO_BODY_PARTS keys for the numbers for each respective body part
