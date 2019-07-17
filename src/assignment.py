@@ -126,6 +126,14 @@ I JUST WANT THE Y VALUUUUEEEE
             # print(human.body_parts[0].v[y])
             # print([(POSE_COCO_BODY_PARTS[0:"Nose"], v.y) for v in human.body_parts.items()])
             # 'unhashable type; 'slice' --> What!?
+
+Evidence of bla bla bla - Stef
+
+- video tutorial series YT (currently watching now) https://www.youtube.com/watch?v=nUjGLjOmF7o
+- Theory: idealy have hail taxi when hand Rwrist and Lwrist (4, 7) are above shoulder Rsholder and Lshoulder (2,5) (for starters, start simple)
+- to increase complexity cancel when both hands are up + get elbow involved
+
+
 """
             
             # ******************** THE IMPORTANT CHANGES ****************************
