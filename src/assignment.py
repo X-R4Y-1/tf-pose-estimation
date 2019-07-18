@@ -143,8 +143,8 @@ if __name__ == '__main__':
             
             # ******************** THE IMPORTANT CHANGES ****************************
 
-            #allpairs = human.body_parts[0].y #How to get the individual y coordinate value
-            #print(allpairs) #Refer to the POSE_COCO_BODY_PARTS keys for the numbers for each respective body part
+            # allpairs = human.body_parts[0].y #How to get the individual y coordinate value
+            # print(allpairs) #Refer to the POSE_COCO_BODY_PARTS keys for the numbers for each respective body part
             # 0 = Nose (eventually I want to code in recognition for which eye is higher)
             # 4 = RWrist
             # 7 = LWrist
@@ -154,6 +154,67 @@ if __name__ == '__main__':
 
             # Debugging statement: remove before demonstration.
         # print([(POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()])
+
+            RWristY = 0
+            RWristX = 0
+            LWristY = 0
+            LWristX = 0
+            REyeY = 0
+            LEyeY = 0
+            MaxEyeY = 0
+            RElbowX = 0
+            LElbowX = 0
+
+            for i in human.body_parts:
+                if i == 3:
+                    RElbowX = human.body_parts[3].x
+                if i == 4:
+                    RWristY = human.body_parts[4].y
+                    RWristX = human.body_parts[4].x
+                if i == 6:
+                    LElbowX = human.body_parts[6].x
+                if i == 7:
+                    LWristY = human.body_parts[7].y
+                    LWristX = human.body_parts[7].x
+                if i == 14:
+                    REyeY = human.body_parts[14].y
+                if i == 15:
+                    LEyeY = human.body_parts[15].y
+                # considered try test but this is better because you
+                # can look at all the elements in there and grab the ones you need
+                # try/exception testing would be bulkier
+            if REyeY <= LEyeY:
+                MaxEyeY = REyeY
+            else:
+                MaxEyeY = LEyeY
+            # print ("MaxEyeY: " + str(MaxEyeY))
+            if LWristY <= MaxEyeY and LWristX <+ LElbowX:
+                print("Someone is hailing a taxi!")
+                # print("LWristY: " + str(LWristY))
+                # print("LWristX: " + str(LWristX))
+                # print("LElbowX: " + str(LElbowX))
+            if RWristY <= MaxEyeY and RWristX >+ RElbowX:
+                print("Someone is hailing a taxi!")
+                # print("RWristY: " + str(RWristY))
+                # print("RWristX: " + str(RWristX))
+                # print("RElbowX: " + str(RElbowX))
+
+            # if human.body_parts[4] == None:
+            #     RWrist = 0
+            # else:
+            #     RwristY = human.body_parts[4].y
+            #     RWristX = human.body_parts[4].x
+
+            # if human.body_parts[0].y = None:
+            #     Nose = human.body_parts[0].y
+            # if human.body_parts[0].y
+            # Nose = 
+            # print(Nose)
+            # Rwrist = human.body_parts[4].y
+            # print(Rwrist)
+            # if Rwrist <= Nose:
+            #     print("Someone is hailing a taxi!")
+
 
         # drawing lines on an image
         image = TfPoseEstimator.draw_humans(image, humans, imgcopy=False)
