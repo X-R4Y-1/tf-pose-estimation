@@ -109,9 +109,9 @@ if __name__ == '__main__':
             # TODO ensure it only does this when someone is hailing a taxi.
             # That is, an arm is above their head.
 
-"""
-Evidence of my journey to the answer/general stupidity doing this - Scarlett
-I JUST WANT THE Y VALUUUUEEEE
+    
+    #Evidence of my journey to the answer/general stupidity doing this - Scarlett
+    #I JUST WANT THE Y VALUUUUEEEE
 
             # if (POSE_COCO_BODY_PARTS[4], v.y) <= (POSE_COCO_BODY_PARTS[0], v.y) for v in human.body_parts.items():
             # (POSE_COCO_BODY_PARTS[7], v.y) >= (POSE_COCO_BODY_PARTS[0], v.y):   
@@ -127,19 +127,19 @@ I JUST WANT THE Y VALUUUUEEEE
             # print([(POSE_COCO_BODY_PARTS[0:"Nose"], v.y) for v in human.body_parts.items()])
             # 'unhashable type; 'slice' --> What!?
 
-Evidence of bla bla bla - Stef
+    #Evidence of bla bla bla - Stef
 
-- video tutorial series YT (currently watching now) https://www.youtube.com/watch?v=nUjGLjOmF7o
-- Theory: idealy have hail taxi when hand Rwrist and Lwrist (4, 7) are above shoulder Rsholder and Lshoulder (2,5) (for starters, start simple)
-- to increase complexity cancel when both hands are up + get elbow involved
-- using similar logic to Scarlett we can also then assume that when the wrist is past the elbow along the x axis it signifies a hail taxi (in conjunction with y value)
+    #- video tutorial series YT (currently watching now) https://www.youtube.com/watch?v=nUjGLjOmF7o
+    #- Theory: idealy have hail taxi when hand Rwrist and Lwrist (4, 7) are above shoulder Rsholder and Lshoulder (2,5) (for starters, start simple)
+    #- to increase complexity cancel when both hands are up + get elbow involved
+    #- using similar logic to Scarlett we can also then assume that when the wrist is past the elbow along the x axis it signifies a hail taxi (in conjunction with y value)
 
             # if (POSE_COCO_BODY_PARTS[4], v.x) <= (POSE_COCO_BODY_PARTS[3], v.x) for v in human.body_parts.items():
             # (POSE_COCO_BODY_PARTS[7], v.x) >= (POSE_COCO_BODY_PARTS[6], v.x):   
 
-more info to continue
+    #more info to continue
 
-"""
+    """
             
             # ******************** THE IMPORTANT CHANGES ****************************
 
@@ -153,7 +153,7 @@ more info to continue
 
 
             # Debugging statement: remove before demonstration.
-            # print([(POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()])
+        # print([(POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()])
 
         # drawing lines on an image
         image = TfPoseEstimator.draw_humans(image, humans, imgcopy=False)
