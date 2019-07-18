@@ -165,13 +165,19 @@ if __name__ == '__main__':
             MaxEyeY = 1
             RElbowX = 1
             LElbowX = 1
+            RShoulderY = 1
+            LShoulderY = 1
 
             for i in human.body_parts:
+                if i == 2:
+                    RShoulderY = human.body_parts[2].y
                 if i == 3:
                     RElbowX = human.body_parts[3].x
                 if i == 4:
                     RWristY = human.body_parts[4].y
                     RWristX = human.body_parts[4].x
+                if i == 5:
+                    LShoulderY = human.body_parts[5].y
                 if i == 6:
                     LElbowX = human.body_parts[6].x
                 if i == 7:
@@ -189,12 +195,14 @@ if __name__ == '__main__':
             else:
                 MaxEyeY = LEyeY
             # print ("MaxEyeY: " + str(MaxEyeY))
-            if LWristY <= MaxEyeY and LElbowX >= LWristX:
+            if LWristY <= MaxEyeY and LElbowX <= LWristX and LWristX != 1:
+                hail_taxi(image)
                 print("Someone is hailing a LEFT taxi!")
                 # print("LWristY: " + str(LWristY))
                 # print("LWristX: " + str(LWristX))
                 # print("LElbowX: " + str(LElbowX))
-            if RWristY <= MaxEyeY and RWristX <= LWristX:
+            if RWristY <= MaxEyeY and RElbowX >= RWristX:
+                hail_taxi(image)
                 print("Someone is hailing a RIGHT taxi!")
                 # print("RWristY: " + str(RWristY))
                 # print("RWristX: " + str(RWristX))
