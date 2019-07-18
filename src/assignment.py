@@ -109,7 +109,8 @@ if __name__ == '__main__':
             # TODO ensure it only does this when someone is hailing a taxi.
             # That is, an arm is above their head.
 
-    
+            (POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()
+        
         #Evidence of my journey to the answer/general stupidity doing this - Scarlett
         #I JUST WANT THE Y VALUUUUEEEE
 
@@ -143,7 +144,7 @@ if __name__ == '__main__':
             
             # ******************** THE IMPORTANT CHANGES ****************************
 
-            #allpairs = human.body_parts[0].y #How to get the individual y coordinate value
+            allpairs = human.body_parts[0].y #How to get the individual y coordinate value
             #print(allpairs) #Refer to the POSE_COCO_BODY_PARTS keys for the numbers for each respective body part
             # 0 = Nose (eventually I want to code in recognition for which eye is higher)
             # 4 = RWrist
@@ -153,10 +154,10 @@ if __name__ == '__main__':
 
 
             # Debugging statement: remove before demonstration.
-        #print([(POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()])
+        print([(POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()])
 
         # drawing lines on an image
-            image = TfPoseEstimator.draw_humans(image, humans, imgcopy=False)
+        image = TfPoseEstimator.draw_humans(image, humans, imgcopy=False)
 
         # FPS counter
         cv2.putText(image, "FPS: {:.2f}".format(1.0 / (time.time() - fps_time)),
