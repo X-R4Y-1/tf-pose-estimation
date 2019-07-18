@@ -109,7 +109,7 @@ if __name__ == '__main__':
             # TODO ensure it only does this when someone is hailing a taxi.
             # That is, an arm is above their head.
 
-            (POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()
+            # (POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()
         
         #Evidence of my journey to the answer/general stupidity doing this - Scarlett
         #I JUST WANT THE Y VALUUUUEEEE
@@ -144,7 +144,7 @@ if __name__ == '__main__':
             
             # ******************** THE IMPORTANT CHANGES ****************************
 
-            allpairs = human.body_parts[0].y #How to get the individual y coordinate value
+            # allpairs = human.body_parts[0].y #How to get the individual y coordinate value
             #print(allpairs) #Refer to the POSE_COCO_BODY_PARTS keys for the numbers for each respective body part
             # 0 = Nose (eventually I want to code in recognition for which eye is higher)
             # 4 = RWrist
@@ -154,17 +154,17 @@ if __name__ == '__main__':
 
 
             # Debugging statement: remove before demonstration.
-        print([(POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()])
+        # print([(POSE_COCO_BODY_PARTS[k], v.x, v.y) for k,v in human.body_parts.items()])
 
-            RWristY = 0
-            RWristX = 0
-            LWristY = 0
-            LWristX = 0
-            REyeY = 0
-            LEyeY = 0
-            MaxEyeY = 0
-            RElbowX = 0
-            LElbowX = 0
+            RWristY = 1
+            RWristX = 1
+            LWristY = 1
+            LWristX = 1
+            REyeY = 1
+            LEyeY = 1
+            MaxEyeY = 1
+            RElbowX = 1
+            LElbowX = 1
 
             for i in human.body_parts:
                 if i == 3:
@@ -189,13 +189,13 @@ if __name__ == '__main__':
             else:
                 MaxEyeY = LEyeY
             # print ("MaxEyeY: " + str(MaxEyeY))
-            if LWristY <= MaxEyeY and LWristX <+ LElbowX:
-                print("Someone is hailing a taxi!")
+            if LWristY <= MaxEyeY and LElbowX >= LWristX:
+                print("Someone is hailing a LEFT taxi!")
                 # print("LWristY: " + str(LWristY))
                 # print("LWristX: " + str(LWristX))
                 # print("LElbowX: " + str(LElbowX))
-            if RWristY <= MaxEyeY and RWristX >+ RElbowX:
-                print("Someone is hailing a taxi!")
+            if RWristY <= MaxEyeY and RWristX <= LWristX:
+                print("Someone is hailing a RIGHT taxi!")
                 # print("RWristY: " + str(RWristY))
                 # print("RWristX: " + str(RWristX))
                 # print("RElbowX: " + str(RElbowX))
