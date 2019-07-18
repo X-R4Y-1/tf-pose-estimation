@@ -132,7 +132,10 @@ Evidence of bla bla bla - Stef
 - video tutorial series YT (currently watching now) https://www.youtube.com/watch?v=nUjGLjOmF7o
 - Theory: idealy have hail taxi when hand Rwrist and Lwrist (4, 7) are above shoulder Rsholder and Lshoulder (2,5) (for starters, start simple)
 - to increase complexity cancel when both hands are up + get elbow involved
+- using similar logic to Scarlett we can also then assume that when the wrist is past the elbow along the x axis it signifies a hail taxi (in conjunction with y value)
 
+            # if (POSE_COCO_BODY_PARTS[4], v.x) <= (POSE_COCO_BODY_PARTS[3], v.x) for v in human.body_parts.items():
+            # (POSE_COCO_BODY_PARTS[7], v.x) >= (POSE_COCO_BODY_PARTS[6], v.x):   
 
 """
             
