@@ -137,6 +137,8 @@ Evidence of bla bla bla - Stef
             # if (POSE_COCO_BODY_PARTS[4], v.x) <= (POSE_COCO_BODY_PARTS[3], v.x) for v in human.body_parts.items():
             # (POSE_COCO_BODY_PARTS[7], v.x) >= (POSE_COCO_BODY_PARTS[6], v.x):   
 
+more info to continue
+
 """
             
             # ******************** THE IMPORTANT CHANGES ****************************
